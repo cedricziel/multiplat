@@ -1,0 +1,71 @@
+{
+    "events": [
+        {
+            "name": "faro.http",
+            "domain": "flutter",
+            "attributes": {
+                "http.request.method": "GET",
+                "http.url": "https://my-json-server.typicode.com/flexi-creator/multiplat_db/contributors",
+                "url.full": "https://my-json-server.typicode.com/flexi-creator/multiplat_db/contributors",
+                "server.address": "my-json-server.typicode.com",
+                "server.port": "443",
+                "http.response.status_code": "200"
+            },
+            "timestamp": "2023-08-10T20:49:37.480913Z",
+            "trace": {
+                "trace_id": "58c25732d726b2830734b4c2128360c7",
+                "span_id": "514d85b1fdb8a6c5"
+            }
+        }
+    ],
+    "exceptions": [],
+    "logs": [],
+    "measurements": [],
+    "traces": {
+        "resourceSpans": [
+            {
+                "resource": {
+                    "attributes": {},
+                    "service.name": {
+                        "stringValue": "dart-app"
+                    },
+                    "telemetry.sdk.language": {
+                        "stringValue": "dart"
+                    },
+                    "telemetry.sdk.name": {
+                        "stringValue": "faro_flutter"
+                    },
+                    "telemetry.sdk.version": {
+                        "stringValue": "0.0.1"
+                    }
+                },
+                "instrumentationLibrarySpans": [
+                    {
+                        "spans": []
+                    },
+                    {
+                        "spans": []
+                    }
+                ]
+            }
+        ]
+    },
+    "meta": {
+        "session": {
+            "id": "cJ9bDeJFSB"
+        },
+        "sdk": {
+            "name": "faro_dart",
+            "version": "0.0.1",
+            "integrations": []
+        },
+        "app": {
+            "name": "multiplat",
+            "version": "0.0.1",
+            "environment": "dev"
+        },
+        "view": {
+            "name": "combined"
+        }
+    }
+}

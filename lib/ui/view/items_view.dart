@@ -132,7 +132,9 @@ class _ItemsViewState extends State<ItemsView> {
     model.itemSelected(index);
     if (widget.combinedView) {
     } else {
-      Navigator.pushNamed(context, "detail");
+      Navigator.pushNamed(context, "detail", arguments: {
+        "name": model.getItemAt(index).title,
+      });
     }
   }
 }

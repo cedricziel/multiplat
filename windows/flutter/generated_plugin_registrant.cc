@@ -6,6 +6,9 @@
 
 #include "generated_plugin_registrant.h"
 
+#include <flutter_faro/flutter_faro_plugin_c_api.h>
 
 void RegisterPlugins(flutter::PluginRegistry* registry) {
+  FlutterFaroPluginCApiRegisterWithRegistrar(
+      registry->GetRegistrarForPlugin("FlutterFaroPluginCApi"));
 }

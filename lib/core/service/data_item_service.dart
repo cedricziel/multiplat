@@ -13,6 +13,10 @@ class DataItemService {
 
   List<DataItem> _items = [];
 
+  late http.Client httpClient;
+
+  DataItemService({httpClient}) : httpClient = httpClient ?? http.Client();
+
   /////////////// Random sample data ///////////
 
   final random = Random();
@@ -76,7 +80,7 @@ class DataItemService {
 
   Future<List<DataItem>> getServerData() async {
     print('Fetching data from server $API_ENDPOINT');
-    final response = await http.get(Uri.parse('$API_ENDPOINT'));
+    final response = await httpClient.get(Uri.parse('$API_ENDPOINT'));
     if (response.statusCode == 200 && response.contentLength! > 0) {
       return DataItem.fromJsonResponse(response.body);
     }

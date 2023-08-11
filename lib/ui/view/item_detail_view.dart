@@ -1,5 +1,8 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_faro/flutter_faro.dart';
 import 'package:multiplat/core/model/data_item.dart';
 import 'package:multiplat/core/util/platform_util.dart';
 import 'package:multiplat/core/viewmodel/item_detail_viewmodel.dart';
@@ -17,6 +20,15 @@ class ItemDetailView extends StatefulWidget {
 class _ItemDetailViewState extends State<ItemDetailView> {
   @override
   Widget build(BuildContext context) {
+    var r = Random();
+    if (r.nextBool()) {
+      try {
+        throw Exception('Severe Exception!');
+      } catch (e, s) {
+        FlutterFaro.pushException(e, stackTrace: s);
+      }
+    }
+
     return BaseView<ItemDetailViewModel>(
       onModelReady: (model) => model.init(),
       builder: (context, model, child) => _buildContent(model),

@@ -1,3 +1,4 @@
+import 'package:faro_dart/faro_dart.dart';
 import 'package:get_it/get_it.dart';
 import 'package:multiplat/core/service/data_item_service.dart';
 import 'package:multiplat/core/service/pane_interaction_service.dart';
@@ -14,7 +15,9 @@ void setupLocator() {
   locator.registerSingleton(MultiplatSharedPrefs());
 
   // Services
-  locator.registerSingleton(DataItemService());
+  locator.registerSingleton(DataItemService(
+    httpClient: FaroHttpClient("multiplat"),
+  ));
   locator.registerSingleton(PaneInteractionService());
 
   // View models

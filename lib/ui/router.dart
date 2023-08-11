@@ -13,26 +13,26 @@ class MultiPlatRouter {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case 'home':
-        return _platformRoute(() => ItemsView());
+        return _platformRoute(() => ItemsView(), settings);
       case 'chart':
-        return _platformRoute(() => ChartView());
+        return _platformRoute(() => ChartView(), settings);
       case 'detail':
-        return _platformRoute(() => ItemDetailView());
+        return _platformRoute(() => ItemDetailView(), settings);
       case 'combined':
-        return _platformRoute(() => CombinedView());
+        return _platformRoute(() => CombinedView(), settings);
       default:
         return _platformRoute(() => Scaffold(
               body: Center(
                 child: Text('No route defined for ${settings.name}'),
               ),
-            ));
+            ), settings);
     }
   }
 
-  static Route<dynamic> _platformRoute(Function builderCallback) {
+  static Route<dynamic> _platformRoute(Function builderCallback, RouteSettings settings) {
     if (isCupertino()) {
-      return CupertinoPageRoute(builder: (_) => builderCallback());
+      return CupertinoPageRoute(builder: (_) => builderCallback(), settings: settings);
     }
-    return MaterialPageRoute(builder: (_) => builderCallback());
+    return MaterialPageRoute(builder: (_) => builderCallback(), settings: settings);
   }
 }

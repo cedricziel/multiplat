@@ -1,0 +1,5 @@
+dependency_overrides:
+  faro_dart:
+    path: ../faro_dart
+  flutter_faro:
+    path: ../flutter_faro
